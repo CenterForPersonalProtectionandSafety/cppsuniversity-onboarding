@@ -25,19 +25,19 @@ require_once $abs_us_root.$us_url_root.'users/helpers/helpers.php';
 // Set config
 $GLOBALS['config'] = array(
 	'mysql'      => array(
-'host'         => 'localhost',
-'username'     => 'root',
-'password'     => 'CPPSdev1!',
-'db'           => 'cpps_internal',
-),
-'remember'        => array(
-  'cookie_name'   => 'pmqesoxiw318374csb',
-  'cookie_expiry' => 604800  //One week, feel free to make it longer
-),
-'session' => array(
-  'session_name' => 'user',
-  'token_name' => 'token',
-)
+		'host'         => 'localhost',
+		'username'     => 'root',
+		'password'     => 'CPPSdev1!',
+		'db'           => 'cpps_internal',
+		),
+	'remember'        => array(
+	  'cookie_name'   => 'pmqesoxiw318374csb',
+	  'cookie_expiry' => 604800  //One week, feel free to make it longer
+	),
+	'session' => array(
+	  'session_name' => 'user',
+	  'token_name' => 'token',
+	)
 );
 
 //If you changed your UserSpice or UserCake database prefix
