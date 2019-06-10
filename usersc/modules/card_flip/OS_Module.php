@@ -7,7 +7,7 @@ BL Module
     <input type="checkbox" id="card2" class="more" aria-hidden="true">
     <div class="content">
         <?php if ($user->data()->complete_oea == 0){ ?>
-        <div class="front" style="background-image: url('/usersc/images/os.jpg')">
+        <div class="front" style="background-image: url('/usersc/images/os.png')">
         <?php } ?>
         <?php if ($user->data()->complete_oea == 1){ ?>
         <div class="front" style="background-image: url('/usersc/images/os_watched.png')">
