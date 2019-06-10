@@ -1,6 +1,6 @@
 <?php
 /*
-SCORM Player - Tier 2
+SCORM Player - Tier 3
 */
 ?>
 
@@ -11,6 +11,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
 ?>
 
 <?php if (!securePage($_SERVER['PHP_SELF'])){die();} ?>
+
 
 <!-- Page Content -->
 <div id="page-wrapper" class="modulePage" onload="Utils.launchSCO(); return false;">
@@ -39,7 +40,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
     function scormIsComplete() {
         //my code goes here
         jQuery.ajax({
-            url:"iscomplete/tier2_iscomplete.php",
+            url:"iscomplete/OTT_iscomplete.php",
             method:"POST",
             success: function() {
                 console.log('success');
@@ -55,7 +56,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
 
     function scormSaveTime(mytime) {
         jQuery.ajax({
-            url:"savetime/tier2_savetime.php",
+            url:"savetime/OTT_savetime.php",
             method:"POST",
             data:{mybookmark:mytime},
             success: function() {
@@ -70,7 +71,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
     function scormGetTime() {
         //my code goes here
         var mytime = jQuery.ajax({
-            url:"gettime/tier2_gettime.php",
+            url:"gettime/OTT_gettime.php",
             method:"POST",
             async: false,
             success: function() {
@@ -291,8 +292,6 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
                         var totalTime = Utils.addTime(this.__data['cmi.core.total_time'], this.__data['cmi.core.session_time']);
                         this.__data['cmi.core.total_time'] = totalTime;
 
-                        //Patrick this is where cookie is stored
-
                         //var cdata = this.__data.toJSONString();
                         var cdata = JSON.stringify(this.__data);
                         storageObject.persist(this.cookiename,cdata,365);
@@ -330,6 +329,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
             // LMSSetValue
             this.LMSSetValue=function(name, value)
             {
+
                 if (name == 'cmi.core.session_time') {
                     //scormSaveTime(value);
                     var mytime = value;
@@ -586,7 +586,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
                 initTimeout = 0;
                 timeoutErrorDisplayed = false;
                 //            var launchFileAltVal = $('launchFileAlt').value;
-                var launchFileAltVal = '../SCORM/Tier2/index_lms.html';
+                var launchFileAltVal = '../SCORM/OTT/index_lms.html';
                 //            var cookieNameAltVal = $('cookieNameAlt').value;
                 if(launchFileAltVal.length > 0)
                 {

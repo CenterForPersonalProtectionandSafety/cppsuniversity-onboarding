@@ -12,6 +12,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
 
 <?php if (!securePage($_SERVER['PHP_SELF'])){die();} ?>
 
+
 <!-- Page Content -->
 <div id="page-wrapper" class="modulePage" onload="Utils.launchSCO(); return false;">
   <div class="container-fluid">
@@ -39,7 +40,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
     function scormIsComplete() {
         //my code goes here
         jQuery.ajax({
-            url:"iscomplete/tier3_iscomplete.php",
+            url:"iscomplete/OS_iscomplete.php",
             method:"POST",
             success: function() {
                 console.log('success');
@@ -55,7 +56,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
 
     function scormSaveTime(mytime) {
         jQuery.ajax({
-            url:"savetime/tier3_savetime.php",
+            url:"savetime/OS_savetime.php",
             method:"POST",
             data:{mybookmark:mytime},
             success: function() {
@@ -70,7 +71,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
     function scormGetTime() {
         //my code goes here
         var mytime = jQuery.ajax({
-            url:"gettime/tier3_gettime.php",
+            url:"gettime/OS_gettime.php",
             method:"POST",
             async: false,
             success: function() {
@@ -585,7 +586,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
                 initTimeout = 0;
                 timeoutErrorDisplayed = false;
                 //            var launchFileAltVal = $('launchFileAlt').value;
-                var launchFileAltVal = '../SCORM/Tier3/index_lms.html';
+                var launchFileAltVal = '../SCORM/OS/index_lms.html';
                 //            var cookieNameAltVal = $('cookieNameAlt').value;
                 if(launchFileAltVal.length > 0)
                 {
