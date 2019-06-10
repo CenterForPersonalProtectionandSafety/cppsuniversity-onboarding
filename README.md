@@ -1,1 +1,1 @@
-# CPPS Learning Management System - Master
+# CPPS Learning Management System for Internal Training
