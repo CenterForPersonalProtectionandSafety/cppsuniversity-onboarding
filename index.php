@@ -9,7 +9,6 @@ if(isset($user) && $user->isLoggedIn()){}
 ?>
 
 <link rel="stylesheet" type="text/css" href="usersc/css/card-flip.css">
-<!-- <link rel="stylesheet" type="text/css" href="usersc/css/card.css"> -->
 
 <div class="container-fluid">
     <div class="text-center">
@@ -27,32 +26,16 @@ if(isset($user) && $user->isLoggedIn()){}
 <div class="wrapper">
   <?php
     // -- card_flip
-    //Include the When Lightning Strikes Module
-    //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/WLS_Module.php';
 
-    //Include the FPDP Module
-    //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/FP_Module.php';
+    //Include the Onboarding All Employees Module
+    //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/OAE_Module.php';
 
-    //Include the Safe Passage Module
-    //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/SafePassage_Module.php';
+    //Include the Onboarding Sales Module
+    //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/OS_Module.php';
 
-    //Include the Tier 2 Module
-    //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/Tier2_Module.php';
+    //Include the Onboarding Trainer Training Module
+    //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/OTT_Module.php';
 
-    //Include the Tier 3 Module
-    if (checkMenu(3,$user->data()->id) || checkMenu(2,$user->data()->id) || checkMenu(7,$user->data()->id)){
-      //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/Tier3_Module.php';
-    }
-
-    //Include the Beyond Lockdown Module
-    if (checkMenu(6,$user->data()->id) || checkMenu(2,$user->data()->id) || checkMenu(7,$user->data()->id)){
-      //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/BL_Module.php';
-    }
-
-    // //Include the Travelers Module - ***** ADD ONCE CREATED ****
-    // if (checkMenu(4,$user->data()->id)){
-    //   include $abs_us_root.$us_url_root.'usersc/modules/card_flip/Travel_Module.php';
-    // }
 
   ?>
 </div>
