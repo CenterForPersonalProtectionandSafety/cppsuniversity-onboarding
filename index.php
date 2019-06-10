@@ -28,13 +28,13 @@ if(isset($user) && $user->isLoggedIn()){}
     // -- card_flip
 
     //Include the Onboarding All Employees Module
-    //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/OAE_Module.php';
+    include $abs_us_root.$us_url_root.'usersc/modules/card_flip/OAE_Module.php';
 
     //Include the Onboarding Sales Module
-    //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/OS_Module.php';
+    include $abs_us_root.$us_url_root.'usersc/modules/card_flip/OS_Module.php';
 
     //Include the Onboarding Trainer Training Module
-    //include $abs_us_root.$us_url_root.'usersc/modules/card_flip/OTT_Module.php';
+    include $abs_us_root.$us_url_root.'usersc/modules/card_flip/OTT_Module.php';
 
 
   ?>
