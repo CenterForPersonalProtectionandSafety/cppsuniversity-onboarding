@@ -13,7 +13,7 @@ BL Module
         <div class="front" style="background-image: url('/usersc/images/ott_comingsoon.png')">
         <?php } ?>
             <div class="inner">
-                <h2>All Employee Training</h2>
+                <h2>Trainer Training</h2>
                 <label for="card3" class="button" aria-hidden="true">
                     Details
                 </label>
