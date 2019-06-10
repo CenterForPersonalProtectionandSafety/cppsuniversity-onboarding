@@ -1,6 +1,6 @@
 <?php
 /*
-Save bookmark time to database
+Retrieve bookmark time
 */
 
 //it grabs the init file, wherever it is located relative to the parser file itself
@@ -11,12 +11,12 @@ $user_id = $user->data()->id;
 
 
 //get bookmark
-//$myvalue = $user->data()->bookmark;
-//return $myvalue
+$myvalue = $user->data()->os_bookmark;
+return $myvalue;
 
 //save bookmark
-$myvalue = Input::get('mybookmark');
-$db->update('users',$user_id,['tier3_bookmark'=>$myvalue]);
+//$myvalue = Input::get('mybookmark');
+//$db->update('users',$user_id,['bookmark'=>$myvalue]);
 
 //a response is sent
 //$response = ['success'=>true];

@@ -16,7 +16,7 @@ $user_id = $user->data()->id;
 
 //save bookmark
 $myvalue = Input::get('mybookmark');
-$db->update('users',$user_id,['fpdp_bookmark'=>$myvalue]);
+$db->update('users',$user_id,['os_bookmark'=>$myvalue]);
 
 //a response is sent
 //$response = ['success'=>true];

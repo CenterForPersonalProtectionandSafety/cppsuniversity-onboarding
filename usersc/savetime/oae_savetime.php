@@ -16,7 +16,7 @@ $user_id = $user->data()->id;
 
 //save bookmark
 $myvalue = Input::get('mybookmark');
-$db->update('users',$user_id,['bl_bookmark'=>$myvalue]);
+$db->update('users',$user_id,['oae_bookmark'=>$myvalue]);
 
 //a response is sent
 //$response = ['success'=>true];

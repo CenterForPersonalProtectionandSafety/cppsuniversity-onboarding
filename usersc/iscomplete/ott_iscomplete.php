@@ -1,6 +1,6 @@
 <?php
 /*
-Retrieve bookmark time
+Set complete_wls to YES
 */
 
 //it grabs the init file, wherever it is located relative to the parser file itself
@@ -8,15 +8,9 @@ require_once '../users/init.php';
 //it instantiates the DB
 $db = DB::getInstance();
 $user_id = $user->data()->id;
+$db->update('users',$user_id,['complete_ott'=>1]);
 
 
-//get bookmark
-$myvalue = $user->data()->sp_bookmark;
-return $myvalue;
-
-//save bookmark
-//$myvalue = Input::get('mybookmark');
-//$db->update('users',$user_id,['bookmark'=>$myvalue]);
 
 //a response is sent
 //$response = ['success'=>true];
