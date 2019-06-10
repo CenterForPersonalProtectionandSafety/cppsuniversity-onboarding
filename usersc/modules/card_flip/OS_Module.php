@@ -14,7 +14,7 @@ BL Module
         <?php } ?>
             <div class="inner">
                 <h2>Sales Training</h2>
-                <label for="card1" class="button" aria-hidden="true">
+                <label for="card2" class="button" aria-hidden="true">
                     Details
                 </label>
             </div>
