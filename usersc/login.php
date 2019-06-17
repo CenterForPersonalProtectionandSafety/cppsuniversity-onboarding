@@ -132,7 +132,7 @@ if (empty($dest = sanitizedDest('dest'))) {
 
                 <div class="logintopspace"></div>
                 <div class="text-center">
-                    <img src="/usersc/images/universitylogo.png" alt="..." class="login-logo">
+                    <img src="/usersc/images/onboarding_logo.png" alt="..." class="login-logo">
                 </div>
             </div>
         </div>

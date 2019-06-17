@@ -13,7 +13,7 @@ if(isset($user) && $user->isLoggedIn()){}
 <div class="container-fluid">
     <div class="text-center">
         <p class="welcomeTitle">WELCOME TO</p>
-        <img src="/usersc/images/universitylogo.png" alt="..." class="">
+        <img src="/usersc/images/onboarding_logo.png" alt="..." class="">
     </div>
 </div>
 <div class="container-fluid descriptionBanner">
