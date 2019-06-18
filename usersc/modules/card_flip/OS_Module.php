@@ -23,7 +23,7 @@ BL Module
             <div class="inner">
                 <div class="description">
                   <h4>Sales Training</h4>
-                  <p>CPPS has produced a new 15-minute video program, “Beyond Lockdown – Preventing and Responding to Extreme School Violence” This 15-minute program pulls from guidance from the FBI, Secret Service and Department of Education to educate students, parents, teachers and staff how to recognize warning signs that a student may be progressing towards violence, and how to respond effectively if violence does erupt.</p>
+                  <p>This course has been developed to help CPPS Account Executives better understand our products/services and gives them a baseline understanding of how the sales process works. This training will also provide sales tactics and give Account Executives a better understanding of their role at CPPS.</p>
                 </div>
                 <label for="card2" class="button return" aria-hidden="true">
                     <i class="fa fa-arrow-left"></i>

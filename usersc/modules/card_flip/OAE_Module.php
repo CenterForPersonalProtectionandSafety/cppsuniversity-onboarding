@@ -23,7 +23,7 @@ BL Module
             <div class="inner">
                 <div class="description">
                   <h4>All Employee Training</h4>
-                  <p>CPPS has produced a new 15-minute video program, “Beyond Lockdown – Preventing and Responding to Extreme School Violence” This 15-minute program pulls from guidance from the FBI, Secret Service and Department of Education to educate students, parents, teachers and staff how to recognize warning signs that a student may be progressing towards violence, and how to respond effectively if violence does erupt.</p>
+                  <p>This course has been developed to help you get a better understanding of where CPPS came from, what CPPS does, why we do what we do and some training tutorials to better prepare you to be successful here at CPPS.</p>
                 </div>
                 <label for="card1" class="button return" aria-hidden="true">
                     <i class="fa fa-arrow-left"></i>
