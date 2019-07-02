@@ -6,8 +6,8 @@
 <?php
 
   //Queries for Onboarding All Employees Course
-  $oaeComplete = $db->query("SELECT id FROM users WHERE complete_oea = 1",array(1))->count();
-  $oaeIncomplete = $db->query("SELECT id FROM users WHERE complete_oea = 0",array(0))->count();
+  $oaeComplete = $db->query("SELECT id FROM users WHERE complete_oae = 1",array(1))->count();
+  $oaeIncomplete = $db->query("SELECT id FROM users WHERE complete_oae = 0",array(0))->count();
 
   //Queries for Onboarding Sales Course
   $osComplete = $db->query("SELECT id FROM users WHERE complete_os = 1",array(1))->count();
