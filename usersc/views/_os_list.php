@@ -44,7 +44,7 @@
                                       <tr>
                                           <th>Name</th>
                                           <th>Email</th>
-                                          <th>Tier 2</th>
+                                          <th>Onboarding Sales</th>
 
                                       </tr>
                                   </thead>
@@ -56,7 +56,7 @@
                                       <tr>
                                           <td><?=$v1->fname?> <?=$v1->lname?></td>
                                           <td><?=$v1->email?></td>
-                                          <td><?php if($v1->complete_tier2==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_os==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
                                       </tr>
                                       <?php } ?>
                                   </tbody>

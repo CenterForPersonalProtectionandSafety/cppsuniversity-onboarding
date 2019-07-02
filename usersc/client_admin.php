@@ -64,20 +64,16 @@ ini_set('memory_limit','1024M');
       $path = usView('_admin_users.php');
       include($path);
       break;
-    case "bl":
-      $path = usView('_bl_list.php');
+    case "oae":
+      $path = usView('_oae_list.php');
       include($path);
       break;
-    case "wls":
-      $path = usView('_wls_list.php');
+    case "os":
+      $path = usView('_os_list.php');
       include($path);
       break;
-    case "tier2":
-      $path = usView('_tier2_list.php');
-      include($path);
-      break;
-    case "tier3":
-      $path = usView('_tier3_list.php');
+    case "ott":
+      $path = usView('_ott_list.php');
       include($path);
       break;
     default:
