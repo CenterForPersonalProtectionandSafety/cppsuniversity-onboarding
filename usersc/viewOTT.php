@@ -40,7 +40,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
     function scormIsComplete() {
         //my code goes here
         jQuery.ajax({
-            url:"iscomplete/ott_iscomplete.php",
+            url:"/iscomplete/ott_iscomplete.php",
             method:"POST",
             success: function() {
                 console.log('success');
@@ -56,7 +56,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
 
     function scormSaveTime(mytime) {
         jQuery.ajax({
-            url:"savetime/ott_savetime.php",
+            url:"/savetime/ott_savetime.php",
             method:"POST",
             data:{mybookmark:mytime},
             success: function() {
@@ -71,7 +71,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
     function scormGetTime() {
         //my code goes here
         var mytime = jQuery.ajax({
-            url:"gettime/ott_gettime.php",
+            url:"/gettime/ott_gettime.php",
             method:"POST",
             async: false,
             success: function() {

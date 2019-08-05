@@ -36,7 +36,6 @@ if(isset($user) && $user->isLoggedIn()){}
     //Include the Onboarding Trainer Training Module
     include $abs_us_root.$us_url_root.'usersc/modules/card_flip/OTT_Module.php';
 
-
   ?>
 </div>
 
