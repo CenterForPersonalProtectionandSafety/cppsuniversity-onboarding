@@ -157,18 +157,17 @@ include $abs_us_root.$us_url_root."users/lang/en-US.php";
 	  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
 	  crossorigin="anonymous"></script> -->
 
-	<script
-	  src="https://code.jquery.com/jquery-3.4.1.js"
-	  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-	  crossorigin="anonymous">
-	</script>
+		<script
+	  src="https://code.jquery.com/jquery-3.0.0.js"
+	  integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo="
+	  crossorigin="anonymous"></script>
 
 	<!-- jQuery Fallback -->
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 	if (typeof jQuery == 'undefined') {
 		document.write(unescape("%3Cscript src='<?=$us_url_root?>users/js/jquery3_4_1.js' type='text/javascript'%3E%3C/script%3E"));
 	}
-	</script>
+	</script> -->
 
 	<?php require_once $abs_us_root.$us_url_root.'usersc/includes/bootstrap_corrections.php'; ?>
 
