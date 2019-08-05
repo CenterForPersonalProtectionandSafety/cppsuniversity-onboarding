@@ -162,15 +162,15 @@ include $abs_us_root.$us_url_root."users/lang/en-US.php";
 	  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	  crossorigin="anonymous"></script> -->
 
-
+	<!-- jQuery Fallback -->
+	<script type="text/javascript">
+	if (typeof jQuery == 'undefined') {
+		document.write(unescape("%3Cscript src='<?=$us_url_root?>users/js/jquery.js' type='text/javascript'%3E%3C/script%3E"));
+	}
+	</script>
 
 	<?php require_once $abs_us_root.$us_url_root.'usersc/includes/bootstrap_corrections.php'; ?>
 
-
-<script
-	src="https://code.jquery.com/jquery-3.4.1.js"
-	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-	crossorigin="anonymous"></script>
 
 <script src="<?=$us_url_root?>users/js/tomfoolery.js"></script>
 <?php if(!isset($_SESSION['fingerprint'])) {?>
