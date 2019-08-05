@@ -162,9 +162,14 @@ include $abs_us_root.$us_url_root."users/lang/en-US.php";
 	  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	  crossorigin="anonymous"></script> -->
 
-	<script
+	<!-- <script
 	  src="https://code.jquery.com/jquery-3.3.1.min.js"
 	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous"></script> -->
+
+	<script
+	  src="https://code.jquery.com/jquery-1.11.2.min.js"
+	  integrity="sha256-Ls0pXSlb7AYs7evhd+VLnWsZ/AqEHcXBeMZUycz/CcA="
 	  crossorigin="anonymous"></script>
 
 	<!-- jQuery Fallback -->
