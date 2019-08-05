@@ -164,8 +164,6 @@ include $abs_us_root.$us_url_root."users/lang/en-US.php";
 
 
 
-<script src="<?=$us_url_root?>users/js/jquery.js"></script>
-
 	<?php require_once $abs_us_root.$us_url_root.'usersc/includes/bootstrap_corrections.php'; ?>
 
 
