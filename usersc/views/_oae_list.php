@@ -25,48 +25,36 @@
                 <h1>Manage Users</h1>
             </div>
         </div>
-
         <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                  <hr />
+            <div class="col-xs-12">
+                <div class="alluinfo">&nbsp;</div>
+                <div class="allutable">
+                    <table id="paginate" class='table table-hover table-list-search'>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Onboarding All Employees</th>
 
-                    <!-- <form class="" action="/usersc/export.php" method="post" name="upload_excel" enctype="multipart/form-data">
-                      <input type="submit" name="Export" class="btn btn-success" value="Export to CSV"/>
-                    </form> -->
-
-                  <div class="row">
-                      <div class="col-xs-12">
-                          <div class="alluinfo">&nbsp;</div>
-                          <div class="allutable">
-                              <table id="paginate" class='table table-hover table-list-search'>
-                                  <thead>
-                                      <tr>
-                                          <th>Name</th>
-                                          <th>Email</th>
-                                          <th>Onboarding All Employees</th>
-
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                      <?php
-                                      //Cycle through users
-                                      foreach ($userData as $v1) {
-                                      ?>
-                                      <tr>
-                                          <td><?=$v1->fname?> <?=$v1->lname?></td>
-                                          <td><?=$v1->email?></td>
-                                          <td><?php if($v1->complete_oae==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
-                                      </tr>
-                                      <?php } ?>
-                                  </tbody>
-                              </table>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            //Cycle through users
+                            foreach ($userData as $v1) {
+                            ?>
+                            <tr>
+                                <td><?=$v1->fname?> <?=$v1->lname?></td>
+                                <td><?=$v1->email?></td>
+                                <td><?php if($v1->complete_oae==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+
     </div>
 </div>
 
