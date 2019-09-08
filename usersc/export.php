@@ -15,7 +15,7 @@ if(isset($_POST["Export"])){
   $output = fopen("php://output", "w");
 
   //Set Headers of Columns
-  fputcsv($output, array('Name', 'Email', 'Last-Sign-In', 'WPV', 'EGML', 'WLS', 'BL'));
+  fputcsv($output, array('Name', 'Email', 'Last-Sign-In', 'All Employee', 'Sales', 'Trainer Training'));
 
   //Run Query
   $db = DB::getInstance();
@@ -25,31 +25,25 @@ if(isset($_POST["Export"])){
   // Loop through query and to convert 0's and 1's into complete / incomplete statements for CSV
   foreach ($userData as $person) {
 
-    if($person->complete_tier2==0){
-      $tier2 = "Incomplete";
+    if($person->complete_oae==0){
+      $oae = "Incomplete";
     }else {
-      $tier2 = "Complete";
+      $oae = "Complete";
     }
 
-    if($person->complete_tier3==0){
-      $tier3 = "Incomplete";
+    if($person->complete_os==0){
+      $os = "Incomplete";
     }else {
-      $tier3 = "Complete";
+      $os = "Complete";
     }
 
-    if($person->complete_wls==0){
-      $wls = "Incomplete";
+    if($person->complete_ott==0){
+      $ott = "Incomplete";
     }else {
-      $wls = "Complete";
+      $ott = "Complete";
     }
 
-    if($person->complete_bl==0){
-      $bl = "Incomplete";
-    }else {
-      $bl = "Complete";
-    }
-
-    fputcsv($output, array($person->fname . " " . $person->lname, $person->email, $person->last_login, $tier2, $tier3, $wls, $bl));
+    fputcsv($output, array($person->fname . " " . $person->lname, $person->email, $person->last_login, $oae, $os, $ott));
   }
 
   fclose($output);
