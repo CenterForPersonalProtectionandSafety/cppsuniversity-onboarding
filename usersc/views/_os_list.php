@@ -78,7 +78,7 @@
 <!-- Place any per-page javascript here -->
 <script src="../users/js/pagination/jquery.dataTables.js" type="text/javascript"></script>
 <script src="../users/js/pagination/dataTables.js" type="text/javascript"></script>
-<script>
+<!-- <script>
     $(document).ready(function() {
         $('#paginate').DataTable({"pageLength": 25,"aLengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]], "aaSorting": []});
 
@@ -91,7 +91,7 @@
             $('.pwpopover').popover('hide');
         });
     });
-</script>
+</script> -->
 
 <?php if($settings->auto_assign_un==0) { ?>
 <script type="text/javascript">

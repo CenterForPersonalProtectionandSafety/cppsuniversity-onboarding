@@ -33,18 +33,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     <?php if (checkMenu(2,$user->data()->id)){  //Links for permission level 2 (Superuser) ?>
       <a class="dropdown-item" href="<?=$us_url_root?>users/admin.php"><i class="fa fa-fw fa-cogs"></i> Admin Dashboard</a>
-      <a class="dropdown-item" href="<?=$us_url_root?>users/admin.php?view=users"><i class="fa fa-user"></i> User Management</a>
+      <!-- <a class="dropdown-item" href="<?=$us_url_root?>users/admin.php?view=users"><i class="fa fa-user"></i> User Management</a>
       <a class="dropdown-item" href="<?=$us_url_root?>users/admin.php?view=permissions"><i class="fa fa-lock"></i> User Permissions</a>
       <a class="dropdown-item" href="<?=$us_url_root?>users/admin.php?view=pages"><i class="fa fa-wrench"></i> System Pages</a>
       <a class="dropdown-item" href="<?=$us_url_root?>users/admin.php?view=messages"><i class="fa fa-envelope"></i> Messages Admin</a>
-      <a class="dropdown-item" href="<?=$us_url_root?>users/admin.php?view=logs"><i class="fa fa-search"></i> System Logs</a>
+      <a class="dropdown-item" href="<?=$us_url_root?>users/admin.php?view=logs"><i class="fa fa-search"></i> System Logs</a> -->
       <div class="dropdown-divider"></div>
     <?php } // if user is logged in ?>
 
 
-    <?php if(checkMenu(2,$user->data()->id) || checkMenu(5,$user->data()->id)){  //Links for permission level 5 (Admin) ?>
+    <?php if(checkMenu(2,$user->data()->id) || checkMenu(8,$user->data()->id)){  //Links for permission level 5 (Admin) ?>
       <a class="dropdown-item" href="<?=$us_url_root?>usersc/client_admin.php"><i class="fa fa-cogs"></i> Admin Dashboard</a>
-      <a class="dropdown-item" href="<?=$us_url_root?>usersc/client_admin.php?view=users"><i class="fa fa-users"></i> Manage Users</a>
       <a class="dropdown-item" href="<?=$us_url_root?>usersc/client_admin.php?view=learner"><i class="fa fa-file-text"></i> Learners List</a>
       <div class="dropdown-divider"></div>
     <?php } // if user is logged in ?>
