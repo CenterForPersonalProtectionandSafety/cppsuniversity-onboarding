@@ -47,7 +47,7 @@ ini_set('memory_limit','1024M');
     return $path;
   }
 
-  if (checkMenu(2,$user->data()->id) || checkMenu(5,$user->data()->id)){
+  if (checkMenu(2,$user->data()->id) || checkMenu(8,$user->data()->id)){
 
   //$view = Input::get('view');
   include($abs_us_root.$us_url_root.'usersc/includes/admin_override.php');

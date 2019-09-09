@@ -42,7 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <?php } // if user is logged in ?>
 
 
-    <?php if(checkMenu(2,$user->data()->id) || checkMenu(8,$user->data()->id)){  //Links for permission level 5 (Admin) ?>
+    <?php if(checkMenu(2,$user->data()->id) || checkMenu(8,$user->data()->id)){  //Links for permission level 8 (Admin) ?>
       <a class="dropdown-item" href="<?=$us_url_root?>usersc/client_admin.php"><i class="fa fa-cogs"></i> Manager Dashboard</a>
       <div class="dropdown-divider"></div>
     <?php } // if user is logged in ?>
