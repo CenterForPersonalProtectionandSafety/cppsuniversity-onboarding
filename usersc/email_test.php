@@ -53,9 +53,14 @@ if(isset($_POST["Email"])){
   $mail->Subject = 'PHPMailer GMail SMTP test';
   //Read an HTML message body from an external file, convert referenced images to embedded,
   //convert HTML into a basic plain-text alternative body
-  //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
+  // $mail->msgHTML(file_get_contents('contents.html'), __DIR__);
   //Replace the plain text body with one created manually
-  $mail->AltBody = 'This is a plain-text message body';
+  // $mail->AltBody = 'This is a plain-text message body';
+
+  //Temp Body
+  $mail->Body = 'This is the HTML message body <b>in bold!</b>';
+
+
   //Attach an image file
   //$mail->addAttachment('images/phpmailer_mini.png');
   //send the message, check for errors
