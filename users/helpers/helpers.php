@@ -198,9 +198,7 @@ $opts = array(
 	$mail = new PHPMailer;
 
 	$mail->SMTPDebug = $results->debug_level;               // Enable verbose debug output
-  if($results->isSMTP == 1){
-    // $mail->isSMTP();
-  }             // Set mailer to use SMTP
+  if($results->isSMTP == 1){$mail->isSMTP();}             // Set mailer to use SMTP
 	$mail->Host = $results->smtp_server;  									// Specify SMTP server
 	$mail->SMTPAuth = $results->useSMTPauth;                // Enable SMTP authentication
 	$mail->Username = $results->email_login;                 // SMTP username
