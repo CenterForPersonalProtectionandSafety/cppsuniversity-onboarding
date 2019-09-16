@@ -64,16 +64,8 @@ if(isset($_POST["Email"])){
   //Attach an image file
   //$mail->addAttachment('images/phpmailer_mini.png');
   //send the message, check for errors
-  if (!$mail->send()) {
-      echo "Mailer Error: " . $mail->ErrorInfo;
-  } else {
-      echo "Message sent!";
-      //Section 2: IMAP
-      //Uncomment these to save your message in the 'Sent Mail' folder.
-      if (save_mail($mail)) {
-          echo "Message saved!";
-      }
-  }
+
+
   //Section 2: IMAP
   //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
   //Function to call which uses the PHP imap_*() functions to save messages: https://php.net/manual/en/book.imap.php
@@ -88,6 +80,17 @@ if(isset($_POST["Email"])){
       $result = imap_append($imapStream, $path, $mail->getSentMIMEMessage());
       imap_close($imapStream);
       return $result;
+  }
+
+  if (!$mail->send()) {
+      echo "Mailer Error: " . $mail->ErrorInfo;
+  } else {
+      echo "Message sent!";
+      //Section 2: IMAP
+      //Uncomment these to save your message in the 'Sent Mail' folder.
+      if (save_mail($mail)) {
+          echo "Message saved!";
+      }
   }
 }
 ?>
