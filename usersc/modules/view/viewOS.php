@@ -576,7 +576,7 @@ SCORM Player - Tier 3
                 initTimeout = 0;
                 timeoutErrorDisplayed = false;
                 //            var launchFileAltVal = $('launchFileAlt').value;
-                var launchFileAltVal = '../../../SCORM/os/index_lms.html';
+                var launchFileAltVal = '../../../SCORM/OS/index_lms.html';
                 //            var cookieNameAltVal = $('cookieNameAlt').value;
                 if(launchFileAltVal.length > 0)
                 {
