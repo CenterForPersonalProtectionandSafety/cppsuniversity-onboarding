@@ -27,7 +27,7 @@ $GLOBALS['config'] = array(
 	'mysql'      => array(
 		'host'         => 'localhost',
 		'username'     => 'root',
-		'password'     => 'CPPSdev1!S',
+		'password'     => 'CPPSdev1!',
 		'db'           => 'cpps_internal_us5',
 		),
 	'remember'        => array(
