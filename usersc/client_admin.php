@@ -47,13 +47,18 @@ ini_set('memory_limit','1024M');
     return $path;
   }
 
-  if (checkMenu(2,$user->data()->id) || checkMenu(8,$user->data()->id)){
+  // Add checkMenu(X,$user->data()->id) ||  with proper permission id value
+  if (checkMenu(3,$user->data()->id)){
 
   //$view = Input::get('view');
   include($abs_us_root.$us_url_root.'usersc/includes/admin_override.php');
   switch ($view) {
     case "learner":
       $path = usView('_learners_list.php');
+      include($path);
+      break;
+    case "users":
+      $path = usView('_admin_users.php');
       include($path);
       break;
     case "oae":
@@ -68,6 +73,12 @@ ini_set('memory_limit','1024M');
       $path = usView('_ott_list.php');
       include($path);
       break;
+    case "upload":
+      $path = usView('_admin_upload.php');
+      include($path);
+      break;
+
+
     default:
     if($view == ''){
     include($abs_us_root.$us_url_root.'usersc/views/_admin_dashboard.php');

@@ -8,12 +8,6 @@
 <!-- <label for="confirm">Pick an account ID number</label>
 <input type="number" class="form-control" min="0" step="1" name="account_id" value="" required> -->
 
-<!-- <div class="checkbox managercheck">
-    <label>
-        <input type="checkbox" name="checkbox" value="Yes"> <strong>Check box if you are a Manager</strong>
-    </label>
-</div> -->
-
 <?php
 //Now, go into the during_user_creation script to see how to process it.
  ?>

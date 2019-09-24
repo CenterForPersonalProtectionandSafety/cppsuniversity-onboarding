@@ -3,8 +3,6 @@
     <div class="page-title">
       <ol class="breadcrumb text-right">
         <li><a href="<?=$us_url_root?>usersc/client_admin.php">Dashboard</a></li>
-        <li>Manage</li>
-        <li><a class="active" href="<?=$us_url_root?>usersc/client_admin.php?view=learner">Learners List</a></li>
       </ol>
     </div>
   </div>
@@ -17,62 +15,42 @@
   $userData = $learners_query->results();
 ?>
 
-<div id="page-wrapper">
-    <div class="container">
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-xs-12 col-md-6">
-                <h1>Manage Users</h1>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                  <hr />
-
-                    <form class="" action="/usersc/export.php" method="post" name="upload_excel" enctype="multipart/form-data">
-                      <input type="submit" name="Export" class="btn btn-success" value="Export to CSV"/>
-                    </form>
-
-                  <div class="row">
-                      <div class="col-xs-12">
-                          <div class="alluinfo">&nbsp;</div>
-                          <div class="allutable">
-                              <table id="paginate" class='table table-hover table-list-search'>
-                                  <thead>
-                                      <tr>
-                                          <th>Name</th><th>Email</th>
-                                          <th>Last Sign In</th>
-                                          <th>OAE</th>
-                                          <th>OS</th>
-                                          <th>OTT</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                      <?php
-                                      //Cycle through users
-                                      foreach ($userData as $v1) {
-                                      ?>
-                                      <tr>
-                                          <td><?=$v1->fname?> <?=$v1->lname?></td>
-                                          <td><?=$v1->email?></td>
-                                          <td><?php if($v1->last_login != 0) { echo $v1->last_login; } else {?> <i>Never</i> <?php }?></td>
-                                          <td><?php if($v1->complete_oae==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
-                                          <td><?php if($v1->complete_os==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
-                                          <td><?php if($v1->complete_ott==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
-                                      </tr>
-                                      <?php } ?>
-                                  </tbody>
-                              </table>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
+  <div class="container">
+    <h2>Manage Users</h2>
+    <hr />
+    <form class="" action="/usersc/export.php" method="post" name="upload_excel" enctype="multipart/form-data">
+      <input type="submit" name="Export" class="btn btn-success" value="Export to CSV"/>
+    </form>
+    <div class="alluinfo">&nbsp;</div>
+    <div class="table-responsive">
+      <table id="paginate" class='table table-hover table-list-search'>
+        <thead class="thead-light">
+          <tr>
+            <th>Name</th><th>Email</th>
+            <th>OAE</th>
+            <th>OS</th>
+            <th>OTT</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+        //Cycle through users
+        foreach ($userData as $v1) {
+        ?>
+          <tr>
+            <td><?=$v1->fname?> <?=$v1->lname?></td>
+            <td><?=$v1->email?></td>
+            <td><?php if($v1->complete_oae==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+            <td><?php if($v1->complete_os==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+            <td><?php if($v1->complete_ott==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+          </tr>
+        <?php } ?>
+        </tbody>
+      </table>
     </div>
-</div>
+  </div>
+
 
 
 <!-- End of main content section -->

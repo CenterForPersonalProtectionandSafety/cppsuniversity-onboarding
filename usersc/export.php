@@ -15,7 +15,7 @@ if(isset($_POST["Export"])){
   $output = fopen("php://output", "w");
 
   //Set Headers of Columns
-  fputcsv($output, array('Name', 'Email', 'Last-Sign-In', 'All Employee', 'Sales', 'Trainer Training'));
+  fputcsv($output, array('Name', 'Email', 'Last-Sign-In', 'OAE', 'OS', 'OTT'));
 
   //Run Query
   $db = DB::getInstance();
@@ -42,6 +42,7 @@ if(isset($_POST["Export"])){
     }else {
       $ott = "Complete";
     }
+
 
     fputcsv($output, array($person->fname . " " . $person->lname, $person->email, $person->last_login, $oae, $os, $ott));
   }

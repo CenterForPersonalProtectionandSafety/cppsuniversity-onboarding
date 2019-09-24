@@ -1,6 +1,6 @@
 <?php
 /*
-UserSpice 4
+UserSpice 5
 An Open Source PHP User Management System
 by the UserSpice Team at http://UserSpice.com
 
@@ -19,8 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 ?>
 <?php require_once '../users/init.php'; ?>
-<?php require_once $abs_us_root.$us_url_root.'users/includes/header.php'; ?>
-<?php require_once $abs_us_root.$us_url_root.'users/includes/navigation.php'; ?>
+<?php require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php'; ?>
 
 <?php if (!securePage($_SERVER['PHP_SELF'])){die();} ?>
 <?php
@@ -32,18 +31,18 @@ if(empty($_POST)) {
   $actual_link = Input::get('actual_link');
   $page = Input::get('page');
   if (empty($actual_link) || empty($page)) {
-      $actual_link = '';
-      $page = '';
-      Redirect::to('../index.php');
+    $actual_link = '';
+    $page = '';
+    Redirect::to('../index.php');
   }
 }
-  if(isset($_SESSION['last_confirm']) && $_SESSION['last_confirm']!='' && !is_null($_SESSION['last_confirm'])) $last_confirm=$_SESSION['last_confirm'];
-  else $last_confirm=date("Y-m-d H:i:s",strtotime("-3 hours",strtotime(date("Y-m-d H:i:s"))));
-  $ctFormatted = date("Y-m-d H:i:s", strtotime($current));
-  $dbPlus = date("Y-m-d H:i:s", strtotime('+2 hours', strtotime($last_confirm)));
-  if (strtotime($ctFormatted) < strtotime($dbPlus)){
-    Redirect::to(htmlspecialchars_decode($actual_link));
-  }
+if(isset($_SESSION['last_confirm']) && $_SESSION['last_confirm']!='' && !is_null($_SESSION['last_confirm'])) $last_confirm=$_SESSION['last_confirm'];
+else $last_confirm=date("Y-m-d H:i:s",strtotime("-3 hours",strtotime(date("Y-m-d H:i:s"))));
+$ctFormatted = date("Y-m-d H:i:s", strtotime($current));
+$dbPlus = date("Y-m-d H:i:s", strtotime('+2 hours', strtotime($last_confirm)));
+if (strtotime($ctFormatted) < strtotime($dbPlus)){
+  Redirect::to(htmlspecialchars_decode($actual_link));
+}
 if (!empty($_POST)) {
   $token = $_POST['csrf'];
   if(!Token::check($token)){
@@ -80,7 +79,7 @@ if (!empty($_POST)) {
         logger($user->data()->id,"Admin Verification","User set PIN Code");
         $_SESSION['last_confirm']=date("Y-m-d H:i:s");
         if(!empty($actual_link)){
-            Redirect::to(htmlspecialchars_decode($actual_link));
+          Redirect::to(htmlspecialchars_decode($actual_link));
         }
       } else {
         $errors[] = 'There was an error updating the user: '.$db->errorString();
@@ -91,47 +90,42 @@ if (!empty($_POST)) {
 }
 
 ?>
-<div id="page-wrapper">
+<div id="page-wrapper" class="content">
 
   <div class="container">
 
     <!-- Page Heading -->
     <div class="row">
-<?=resultBlock($errors,$successes);?>
-<? if ($actual_link !='') { ?>
+      <?=resultBlock($errors,$successes);?>
+      <? if ($actual_link !='') { ?>
         <div class="col-xs-12 col-md-7">
-        <h1>Please select a PIN code</h1>
-        <p>PIN Codes are used for verification when accessing administrative pages. Your PIN should be 4-10 digits long.</p>
+          <h1>Please select a PIN code</h1>
+          <p>PIN Codes are used for verification when accessing administrative pages. Your PIN should be 4-10 digits long.</p>
+        </div>
+
       </div>
-
-     </div>
-    <div class="row">
-    <form class="verify-admin" action="admin_pin.php" method="POST" id="payment-form">
-    <div class="col-md-3">
-      <input class="form-control" type="password" name="pin" id="pin" placeholder="Please enter your PIN code" autocomplete="off" required autofocus>
+      <div class="row">
+        <form class="verify-admin" action="admin_pin.php" method="POST" id="payment-form">
+          <div class="col-md-3">
+            <input class="form-control" type="password" name="pin" id="pin" placeholder="Please enter your PIN code" autocomplete="off" required autofocus>
+          </div>
+          <div class="col-md-4">
+            <div class="input-group"><input class="form-control" type="password" name="pin_confirm" id="pin_confirm" placeholder="Please confirm your PIN code" autocomplete="off">
+              <span class="input-group-btn">
+                <input class='btn btn-primary' type='submit' name='addPin' value='Save PIN' />
+              </span></div>
+              <input type="hidden" name="verify_uri" value="<?=$actual_link?>" />
+              <input type="hidden" name="verify_page" value="<?=$page?>" />
+              <input type="hidden" value="<?=Token::generate();?>" name="csrf">
+            <? } ?>
+          </div>
+        </div>
+      </form><br />
     </div>
-    <div class="col-md-4">
-    <div class="input-group"><input class="form-control" type="password" name="pin_confirm" id="pin_confirm" placeholder="Please confirm your PIN code" autocomplete="off">
-        <span class="input-group-btn">
-        <input class='btn btn-primary' type='submit' name='addPin' value='Save PIN' />
-      </span></div>
-    <input type="hidden" name="verify_uri" value="<?=$actual_link?>" />
-    <input type="hidden" name="verify_page" value="<?=$page?>" />
-    <input type="hidden" value="<?=Token::generate();?>" name="csrf">
-    <? } ?>
-    </div>
-     </div>
-   </form><br />
-   </div>
-   </div>
-
-
   </div>
+
+
 </div>
-    <!-- End of main content section -->
-
-<?php require_once $abs_us_root.$us_url_root.'users/includes/page_footer.php'; // the final html footer copyright row + the external js calls ?>
-
-    <!-- Place any per-page javascript here -->
-
-<?php require_once $abs_us_root.$us_url_root.'users/includes/html_footer.php'; // currently just the closing /body and /html ?>
+</div>
+<!-- End of main content section -->
+<?php require_once $abs_us_root . $us_url_root . 'users/includes/html_footer.php'; ?>

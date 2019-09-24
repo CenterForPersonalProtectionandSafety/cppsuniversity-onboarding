@@ -6,9 +6,9 @@
 
 //You can test this out by uncommenting the section below and you will note that the menu on the home page changes from the default Home to Homepage
 
-$lang = array_merge($lang,array(
-"TEST"			=> "HELLO WORLD",
-));
+// $lang = array_merge($lang,array(
+// "MENU_HOME"			=> "Homepage",
+// ));
 
 
 ?>

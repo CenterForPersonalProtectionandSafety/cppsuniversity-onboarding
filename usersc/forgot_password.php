@@ -1,7 +1,7 @@
 <?php
 // This is a user-facing page
 /*
-UserSpice 4
+UserSpice 5
 An Open Source PHP User Management System
 by the UserSpice Team at http://UserSpice.com
 
@@ -18,13 +18,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
 require_once '../users/init.php';
-require_once $abs_us_root.$us_url_root.'users/includes/header.php';
-require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
-
-//require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php';
-
+require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php';
 
 if (!securePage($_SERVER['PHP_SELF'])){die();}
 
@@ -45,7 +40,7 @@ if (Input::get('forgotten_password')) {
     $fuser = new User($email);
     //validate the form
     $validate = new Validate();
-    $msg1 = "Email";
+    $msg1 = lang("GEN_EMAIL");
     $validation = $validate->check($_POST,array('email' => array('display' => $msg1,'valid_email' => true,'required' => true,),));
 
     if($validation->passed()){
@@ -60,16 +55,16 @@ if (Input::get('forgotten_password')) {
               'vericode' => $vericode,
               'reset_vericode_expiry' => $settings->reset_vericode_expiry
             );
-            $subject = "Password Reset";
+            $subject = lang("PW_RESET");
             $encoded_email=rawurlencode($email);
             $body =  email_body('_email_template_forgot_password.php',$options);
             $email_sent=email($email,$subject,$body);
             logger($fuser->data()->id,"User","Requested password reset.");
             if(!$email_sent){
-                $errors[] = "Email NOT sent due to error. Please contact site administrator.";
+                $errors[] = lang("ERR_EMAIL");
             }
         }else{
-            $errors[] = "That email does not exist in our database";
+            $errors[] = lang("ERR_EM_DB");
         }
     }else{
         //display the errors
@@ -81,19 +76,42 @@ if (Input::get('forgotten_password')) {
 if ($user->isLoggedIn()) $user->logout();
 ?>
 
-<div id="page-wrapper">
-<div class="container">
-<?php
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="templates/cpps/assets/css/logged_out.css">
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(){
+      document.getElementById('forgotModal').style.display='block'
+    });
+</script>
 
-if($email_sent){
-    require $abs_us_root.$us_url_root.'users/views/_forgot_password_sent.php';
-}else{
-    require $abs_us_root.$us_url_root.'users/views/_forgot_password.php';
-}
+<div class="w3-container">
+  <div id="forgotModal" class="w3-modal" data-keyboard="false" data-backdrop="static">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:1100px">
 
-?>
-</div><!-- /.container-fluid -->
-</div><!-- /#page-wrapper -->
+      <div class="w3-center"><br>
+        <img src="/usersc/images/onboarding_logo.png" class="w3-image" style="width:100%;max-width:300px">
+      </div>
+
+      <?php
+
+      if($email_sent){
+          require $abs_us_root.$us_url_root.'users/views/_forgot_password_sent.php';
+      }else{
+          require $abs_us_root.$us_url_root.'users/views/_forgot_password.php';
+      }
+
+      ?>
+
+      <div class="w3-bar">
+        <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/login.php'"><i class="fa fa-sign-in"></i> Login</button>
+        <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/forgot_password.php'"><i class="fa fa-info-circle"></i> Forgot Password</button>
+        <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/join.php'"><i class="fa fa-user-plus"></i> Register</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!-- footer -->
 <!-- footers -->

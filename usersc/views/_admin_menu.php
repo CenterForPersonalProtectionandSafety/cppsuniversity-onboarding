@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>UserSpice Dashboard</title>
+  <title>CPPS University Dashboard</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="../../users/css/dashboard/style.css">
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-  <script src="../../users/js/jquery-3.3.1.min.js"></script>
+  <script src="../../users/js/jquery.js"></script>
   <script src="../../users/js/popper.min.js"></script>
   <script src="../../users/js/bootstrap.min.js"></script>
 <style>
@@ -97,8 +97,8 @@ function activeDropdown($View, $dropId, $Area = false){
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand" href="<?=$us_url_root?>index.php"><img src="../../users/images/logo.png" alt="Logo"></a>
-        <a class="navbar-brand hidden" href="./"><img src="../../users/images/logo2.png" alt="Logo"></a>
+        <a class="navbar-brand" href="<?=$us_url_root?>index.php"><img src="../usersc/images/logo.png" alt="Logo"></a>
+        <a class="navbar-brand hidden" href="./"><img src="../usersc/images/home.png" alt="Logo"></a>
       </div>
 
       <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -108,8 +108,13 @@ function activeDropdown($View, $dropId, $Area = false){
           </li>
           <!-- <h3 class="menu-title">Settings</h3> -->
           <li class="menu-title">Manage</li><!-- /.menu-title -->
+            <li <?=($view == 'users') ? 'class="active"' : '' ;?>><a href="client_admin.php?view=users"><i class="menu-icon fa fa-user"></i>Users</a></li>
             <li <?=($view == 'learner') ? 'class="active"' : '' ;?>><a href="client_admin.php?view=learner"><i class="menu-icon fa fa-users"></i>Learners List</a></li>
 
+          <?php if (checkMenu(2,$user->data()->id)) {?>
+            <li class="menu-title">Upload</li><!-- /.menu-title -->
+              <li <?=($view == 'upload') ? 'class="active"' : '' ;?>><a href="client_admin.php?view=upload"><i class="menu-icon fa fa-user"></i>User Upload</a></li>
+          <?php } ?>
 
           <h3 class="menu-title">Misc</h3><!-- /.menu-title -->
           <li class="menu-item">
