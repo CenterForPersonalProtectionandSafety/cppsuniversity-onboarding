@@ -77,14 +77,14 @@ if($user->data()->first_login_pass_reset == 0) {
 	    <div class="wrapper">
 	      <?php
 	          // -- card_flip
-	          //Include the Tier 2 Module 1
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/OAE_Module.php';
+	          //Include OAE Card
+	          include $abs_us_root.$us_url_root.'courses/OAE/cards/OAE_Card.php';
 
-	          //Include the Tier 2 Module 2
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/OS_Module.php';
+            //Include OS Card
+	          include $abs_us_root.$us_url_root.'courses/OS/cards/OS_Card.php';
 
-	          //Include the Tier 2 Module 3
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/OTT_Module.php';
+            //Include OTT Card
+	          include $abs_us_root.$us_url_root.'courses/OTT/cards/OTT_Card.php';
 
 	       ?>
 	    </div>
