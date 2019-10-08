@@ -4,7 +4,7 @@ SCORM Player - Tier 3
 */
 ?>
 
-<?php require_once '../../../users/init.php'; ?>
+<?php require_once '../../users/init.php'; ?>
 <?php require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php'; ?>
 <?php if (!securePage($_SERVER['PHP_SELF'])){die();} ?>
 
@@ -30,7 +30,7 @@ SCORM Player - Tier 3
     function scormIsComplete() {
         //my code goes here
         jQuery.ajax({
-            url:"modules/functions/iscomplete/os_iscomplete.php",
+            url:"os_iscomplete.php",
             method:"POST",
             success: function() {
                 console.log('success');
@@ -46,7 +46,7 @@ SCORM Player - Tier 3
 
     function scormSaveTime(mytime) {
         jQuery.ajax({
-            url:"modules/functions/savetime/os_savetime.php",
+            url:"os_savetime.php",
             method:"POST",
             data:{mybookmark:mytime},
             success: function() {
@@ -61,7 +61,7 @@ SCORM Player - Tier 3
     function scormGetTime() {
         //my code goes here
         var mytime = jQuery.ajax({
-            url:"modules/functions/gettime/os_gettime.php",
+            url:"os_gettime.php",
             method:"POST",
             async: false,
             success: function() {
@@ -576,7 +576,7 @@ SCORM Player - Tier 3
                 initTimeout = 0;
                 timeoutErrorDisplayed = false;
                 //            var launchFileAltVal = $('launchFileAlt').value;
-                var launchFileAltVal = '../../../SCORM/OS/index_lms.html';
+                var launchFileAltVal = '../../SCORM/OS/index_lms.html';
                 //            var cookieNameAltVal = $('cookieNameAlt').value;
                 if(launchFileAltVal.length > 0)
                 {
