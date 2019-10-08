@@ -28,7 +28,7 @@ BL Module
                 <label for="card2" class="button return" aria-hidden="true">
                     <i class="fa fa-arrow-left"></i>
                 </label>
-                <a href="/usersc/modules/view/viewOS.php" class="button return button-play" aria-hidden="true">
+                <a href="/courses/OS/viewOS.php" class="button return button-play" aria-hidden="true">
                   <i class="fa fa-play"> Play Module</i>
                 </a>
             </div>
