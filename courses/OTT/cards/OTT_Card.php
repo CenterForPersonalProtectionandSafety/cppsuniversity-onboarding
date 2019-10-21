@@ -7,10 +7,10 @@ BL Module
     <input type="checkbox" id="card3" class="more" aria-hidden="true">
     <div class="content">
         <?php if ($user->data()->complete_ott == 0){ ?>
-        <div class="front" style="background-image: url('/usersc/images/modules/ott.png')">
+        <div class="front" style="background-image: url('/usersc/images/modules/placeholder.png')">
         <?php } ?>
         <?php if ($user->data()->complete_ott == 1){ ?>
-        <div class="front" style="background-image: url('/usersc/images/modules/ott_watched.png')">
+        <div class="front" style="background-image: url('/usersc/images/modules/placeholder.png')">
         <?php } ?>
             <div class="inner">
                 <h2>Onboarding Trainers Training</h2>
