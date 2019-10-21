@@ -13,7 +13,7 @@ BL Module
         <div class="front" style="background-image: url('/usersc/images/modules/placeholder.png')">
         <?php } ?>
             <div class="inner">
-                <h2>Onboarding Trainers Training</h2>
+                <h2></h2>
                 <label for="card3" class="button" aria-hidden="true">
                     Details
                 </label>
