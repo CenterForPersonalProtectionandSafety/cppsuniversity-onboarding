@@ -26,8 +26,8 @@ require_once $abs_us_root.$us_url_root.'users/helpers/helpers.php';
 $GLOBALS['config'] = array(
 	'mysql'      => array(
 		'host'         => 'localhost',
-		'username'     => 'root',
-		'password'     => 'CPPSdev1!',
+		'username'     => 'USERNAME GOES HERE',
+		'password'     => 'PASSWORD GOES HERE',
 		'db'           => 'cpps_internal_us5',
 		),
 	'remember'        => array(
